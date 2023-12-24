@@ -158,7 +158,7 @@ kalloc(void)
   if(r) { // 如果找到物理页，则返回
     memset((char *) r, 5, PGSIZE); // fill with junk
     return (void*)r;
-  } else { // 当前CPU无可用内存，则从别的CPU偷内存
+  } else { // 当前CPU无可用内存，则从别的CPU内存
     return stealing(id);
   }
 }
